@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Standard favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
+
+    <!-- High-resolution favicon for Retina & Mobile -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+
+    <link rel="manifest" href="site.webmanifest">
+
+    <title>🎫Types of Tickets - Manila Train Fare LRT Line 2 Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Century Gothic;
+            background: linear-gradient(180deg, #f8f9fa, #e9ecef);
+            text-align: center;
+            margin: 0;
+            padding-top: 80px;
+        }
+         #logo{
+          width: 100%;
+          height: 50px; 
+      }
+
+        h1 {
+            color: #343a40;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background: #343a40;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+
+        .ticket-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .ticket-card {
+            width: 100%;
+            max-width: 600px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        footer {
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img id="logo" src="LRT Line 2 Logo.jpg" alt="LRT Line 2 Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="train-schedule.html">Train Schedule</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us and FAQ</a></li>
+                <li class="nav-item"><a class="nav-link active" href="fares.html">Fares</a></li>
+                <li class="nav-item"><a class="nav-link active" href="stations.html">Stations</a></li>
+                <li class="nav-item"><a class="nav-link active" href="travel-tips.html">Travel Tips</a></li>
+                <li class="nav-item"><a class="nav-link active" href="types-of-ticket.html">Types of Tickets</a></li>
+                <li class="nav-item"><a class="nav-link active" href="live-train-status.html">Live Train Status</a></li>
+                <li class="nav-item"><a class="nav-link active" href="emergency-guide.html">Emergency Guide</a></li>
+                <li class="nav-item"><a class="nav-link active" href="history.html">LRT Line 2 History</a></li>
+                <li class="nav-item"><a class="nav-link active" href="load-beep-card.html">How to Load Beep Card</a></li>
+                <li class="nav-item"><a class="nav-link active" href="passenger-tips.html">Passenger Tips and Reminders</a></li>
+                <li class="nav-item"><a class="nav-link active" href="related-articles.html">Related Articles and References/Sources</a></li>
+            </ul>
+            <!-- Search Bar -->
+            <form id="search-form" class="d-flex ms-auto">
+                <input type="text" id="search-input" class="form-control me-2" placeholder="Search..." aria-label="Search">
+                <button type="submit" class="btn btn-outline-light">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('search-form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form submission
+
+        const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+        const pageMapping = {
+            'home': 'index.html', 'main': 'index.html', 'index': 'index.html',
+            'train schedule': 'train-schedule.html', 'train': 'train-schedule.html', 'schedule': 'train-schedule.html',
+            'contact us': 'contact.html', 'contact': 'contact.html', 'faq': 'contact.html', 
+            'fares': 'fares.html', 'fare': 'fares.html',
+            'stations': 'stations.html', 'station': 'stations.html',
+            'travel tips': 'travel-tips.html', 'travel': 'travel-tips.html',
+            'types of tickets': 'types-of-ticket.html', 'ticket': 'types-of-ticket.html',
+            'live train status': 'live-train-status.html', 'train status': 'live-train-status.html',
+            'emergency guide': 'emergency-guide.html', 'emergency': 'emergency-guide.html', 'guide': 'emergency-guide.html',
+            'lrt line 2 history': 'history.html', 'history': 'history.html',
+            'load beep card': 'load-beep-card.html', 'load': 'load-beep-card.html', 'beep': 'load-beep-card.html',
+            'passenger tips': 'passenger-tips.html', 'passenger': 'passenger-tips.html', 'reminders': 'passenger-tips.html',
+            'related articles': 'related-articles.html', 'articles': 'related-articles.html', 'references': 'related-articles.html'
+        };
+
+        let foundPage = null;
+        Object.keys(pageMapping).forEach(key => {
+            if (searchQuery.includes(key)) {
+                foundPage = pageMapping[key];
+            }
+        });
+
+        if (foundPage) {
+            window.location.href = foundPage;
+        } else {
+            alert('Page not found. Please try a different search term.');
+        }
+    });
+</script>
+
+    <div class="container">
+        <h1 class="text-primary">🎟 Types of Tickets</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Ticket Type</th>
+                    <th>Best For</th>
+                    <th>Validity</th>
+                    <th>Discounts</th>
+                    <th>Where to Buy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Single Journey Ticket</td>
+                    <td>One-time travelers</td>
+                    <td>One trip</td>
+                    <td>❌ No</td>
+                    <td>Ticket booths, vending machines</td>
+                </tr>
+                <tr>
+                    <td>Beep Card (Stored Value)</td>
+                    <td>Regular commuters</td>
+                    <td>4 years from last load</td>
+                    <td>❌ No</td>
+                    <td>Vending machines, convenience stores</td>
+                </tr>
+                <tr>
+                    <td>Student Beep Card</td>
+                    <td>Students</td>
+                    <td>4 years from last load</td>
+                    <td>✅ 20% discount</td>
+                    <td>LRT-2 stations (w/ student ID)</td>
+                </tr>
+                <tr>
+                    <td>Senior Citizen Beep Card</td>
+                    <td>Seniors (60+)</td>
+                    <td>4 years from last load</td>
+                    <td>✅ 20% discount</td>
+                    <td>LRT-2 stations (w/ Senior Citizen ID)</td>
+                </tr>
+                <tr>
+                    <td>PWD Beep Card</td>
+                    <td>PWDs</td>
+                    <td>4 years from last load</td>
+                    <td>✅ 20% discount</td>
+                    <td>LRT-2 stations (w/ PWD ID)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="ticket-info">
+            <div class="ticket-card">
+                <h3>📌 Single Journey Ticket</h3>
+                <p>A one-time use ticket that expires after a single trip. Prices range from ₱15 to ₱35 depending on distance.</p>
+            </div>
+
+            <div class="ticket-card">
+                <h3>💳 Beep Card</h3>
+                <p>A stored value card that allows multiple rides. Offers convenience and faster entry compared to paper tickets.</p>
+            </div>
+
+            <div class="ticket-card">
+                <h3>🎓 Student, Senior, & PWD Beep Cards</h3>
+                <p>Special Beep Cards with a 20% discount. Valid IDs are required to apply at LRT-2 stations.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Manila Train Fare LRT Line 2 Guide. All rights reserved.</p>
+        <p>Created by Shean Aquino, 9-Emerald</p>
+    </footer>
+
+</body>
+</html>

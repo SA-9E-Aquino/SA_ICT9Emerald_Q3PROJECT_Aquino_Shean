@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Standard favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+<link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
+
+<!-- High-resolution favicon for Retina & Mobile -->
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+
+<link rel="manifest" href="site.webmanifest">
+
+    <title>🚆💡Travel Tips - Manila Train Fare LRT Line 2 Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 80px;
+            background-color: #f8f9fa;
+            font-family: Georgia;
+        }
+        #logo{
+          width: 100%;
+          height: 50px;
+      }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img id="logo" src="LRT Line 2 Logo.jpg" alt="LRT Line 2 Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="train-schedule.html">Train Schedule</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us and FAQ</a></li>
+                <li class="nav-item"><a class="nav-link active" href="fares.html">Fares</a></li>
+                <li class="nav-item"><a class="nav-link active" href="stations.html">Stations</a></li>
+                <li class="nav-item"><a class="nav-link active" href="travel-tips.html">Travel Tips</a></li>
+                <li class="nav-item"><a class="nav-link active" href="types-of-ticket.html">Types of Tickets</a></li>
+                <li class="nav-item"><a class="nav-link active" href="live-train-status.html">Live Train Status</a></li>
+                <li class="nav-item"><a class="nav-link active" href="emergency-guide.html">Emergency Guide</a></li>
+                <li class="nav-item"><a class="nav-link active" href="history.html">LRT Line 2 History</a></li>
+                <li class="nav-item"><a class="nav-link active" href="load-beep-card.html">How to Load Beep Card</a></li>
+                <li class="nav-item"><a class="nav-link active" href="passenger-tips.html">Passenger Tips and Reminders</a></li>
+                <li class="nav-item"><a class="nav-link active" href="related-articles.html">Related Articles and References/Sources</a></li>
+            </ul>
+            <!-- Search Bar -->
+            <form id="search-form" class="d-flex ms-auto">
+                <input type="text" id="search-input" class="form-control me-2" placeholder="Search..." aria-label="Search">
+                <button type="submit" class="btn btn-outline-light">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('search-form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form submission
+
+        const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+        const pageMapping = {
+            'home': 'index.html', 'main': 'index.html', 'index': 'index.html',
+            'train schedule': 'train-schedule.html', 'train': 'train-schedule.html', 'schedule': 'train-schedule.html',
+            'contact us': 'contact.html', 'contact': 'contact.html', 'faq': 'contact.html', 
+            'fares': 'fares.html', 'fare': 'fares.html',
+            'stations': 'stations.html', 'station': 'stations.html',
+            'travel tips': 'travel-tips.html', 'travel': 'travel-tips.html',
+            'types of tickets': 'types-of-ticket.html', 'ticket': 'types-of-ticket.html',
+            'live train status': 'live-train-status.html', 'train status': 'live-train-status.html',
+            'emergency guide': 'emergency-guide.html', 'emergency': 'emergency-guide.html', 'guide': 'emergency-guide.html',
+            'lrt line 2 history': 'history.html', 'history': 'history.html',
+            'load beep card': 'load-beep-card.html', 'load': 'load-beep-card.html', 'beep': 'load-beep-card.html',
+            'passenger tips': 'passenger-tips.html', 'passenger': 'passenger-tips.html', 'reminders': 'passenger-tips.html',
+            'related articles': 'related-articles.html', 'articles': 'related-articles.html', 'references': 'related-articles.html'
+        };
+
+        let foundPage = null;
+        Object.keys(pageMapping).forEach(key => {
+            if (searchQuery.includes(key)) {
+                foundPage = pageMapping[key];
+            }
+        });
+
+        if (foundPage) {
+            window.location.href = foundPage;
+        } else {
+            alert('Page not found. Please try a different search term.');
+        }
+    });
+</script>
+
+    <div class="container">
+        <h1 class="text-center text-warning my-4">🚆💡Travel Tips</h1>
+
+        <h2>Planning Your Journey</h2>
+        <ul>
+            <li>Plan your route and identify transfer stations ahead of time.</li>
+            <li>Load your Beep Card to avoid long ticket booth queues.</li>
+            <li>Check the train schedule before leaving to minimize waiting times.</li>
+        </ul>
+
+        <h2>Safety Tips</h2>
+        <ul>
+            <li>Always stay behind the yellow line on the platform until the train comes to a complete stop.</li>
+            <li>Hold onto railings when standing to avoid falls during sudden stops.</li>
+            <li>Be aware of your surroundings to protect your belongings from theft.</li>
+        </ul>
+
+        <h2>During Rush Hours</h2>
+        <p>Try to travel during non-peak hours (usually mid-morning or early afternoon) to avoid crowds and long lines.</p>
+    </div>
+
+    <div class="container mt-5">
+    <h1>🚆 Travel Tips for LRT-2 Riders</h1>
+    <p>Follow these tips for a smoother and safer train ride.</p>
+
+    <div class="list-group">
+        <div class="list-group-item">
+            <h4>1. Use Beep Cards for Faster Entry</h4>
+            <p>Avoid long lines by using a <strong>Beep Card</strong> instead of single-journey tickets. Load your card in advance to prevent delays.</p>
+        </div>
+
+        <div class="list-group-item">
+            <h4>2. Travel During Off-Peak Hours</h4>
+            <p>Trains are less crowded <strong>before 7 AM</strong> and <strong>after 9 PM</strong>. Avoid peak hours (7-9 AM, 5-8 PM) for a more comfortable ride.</p>
+        </div>
+
+        <div class="list-group-item">
+            <h4>3. Stand on the Right, Walk on the Left</h4>
+            <p>When using escalators, stand on the <strong>right</strong> to let others pass on the <strong>left</strong>.</p>
+        </div>
+
+        <div class="list-group-item">
+            <h4>4. Follow the 1-Meter Rule</h4>
+            <p>Stay at least <strong>1 meter away</strong> from the train doors while waiting to board.</p>
+        </div>
+
+        <div class="list-group-item">
+            <h4>5. Watch Out for Pickpockets</h4>
+            <p>Keep your bag zipped and close to you, especially in crowded areas. Be cautious when using your phone.</p>
+        </div>
+
+        <div class="list-group-item">
+            <h4>6. Line Up Properly When Boarding</h4>
+            <p>Let passengers <strong>exit first</strong> before boarding to avoid congestion.</p>
+        </div>
+
+        <div class="list-group-item">
+            <h4>7. Take the First or Last Car if You Have Luggage</h4>
+            <p>Train cars at the <strong>front and back</strong> are usually less crowded, making them ideal for passengers with large bags.</p>
+        </div>
+
+        <div class="list-group-item">
+            <h4>8. Use Station Facilities</h4>
+            <p>Some stations offer <strong>free water refilling stations</strong> and <strong>clean restrooms</strong> for your convenience.</p>
+        </div>
+
+        <div class="list-group-item">
+            <h4>9. Plan for Train Delays</h4>
+            <p>Unexpected delays happen. If you have an important appointment, <strong>leave earlier</strong> than planned.</p>
+        </div>
+
+        <div class="list-group-item">
+            <h4>10. Stay Updated on Train Schedules</h4>
+            <p>Follow <strong>LRT-2’s official social media pages</strong> and check our <strong>Live Train Status</strong> for real-time updates.</p>
+        </div>
+    </div>
+</div>
+
+    <footer>
+        <p>&copy; 2025 Manila Train Fare LRT Line 2 Guide. All rights reserved.</p>
+        <p>Created by Shean Aquino, 9-Emerald</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

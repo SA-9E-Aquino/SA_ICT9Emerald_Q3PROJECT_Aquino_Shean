@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Standard favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+<link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
+
+<!-- High-resolution favicon for Retina & Mobile -->
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+
+<link rel="manifest" href="site.webmanifest">
+
+
+    <title>🚨🚆 Live Train Status - Manila Train Fare LRT Line 2 Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #f8f9fa, #e9ecef);
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        #logo {
+          width: 100%;
+          height: 50px; 
+      }
+        
+        h1 {
+            color: #343a40;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .train-status {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .station {
+            position: relative;
+            width: 250px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            padding: 10px;
+            transition: transform 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+        .station:hover {
+            transform: scale(1.05);
+        }
+
+        /* Dynamic station colors with gradient */
+        .station:nth-child(odd) { background: linear-gradient(135deg, #007bff, #0056b3); } /* Blue */
+        .station:nth-child(even) { background: linear-gradient(135deg, #28a745, #1c7b2e); } /* Green */
+        .station:nth-child(3n) { background: linear-gradient(135deg, #dc3545, #9e1a23); } /* Red */
+        .station:nth-child(4n) { background: linear-gradient(135deg, #6c757d, #444d56); } /* Gray */
+        .station:nth-child(5n) { background: linear-gradient(135deg, #ff6600, #cc5200); } /* Orange */
+
+        .train {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: yellow;
+            color: black;
+            padding: 7px 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .train:hover {
+            background: orange;
+            transform: scale(1.1);
+        }
+        footer {
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img id="logo" src="LRT Line 2 Logo.jpg" alt="LRT Line 2 Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="train-schedule.html">Train Schedule</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us and FAQ</a></li>
+                <li class="nav-item"><a class="nav-link active" href="fares.html">Fares</a></li>
+                <li class="nav-item"><a class="nav-link active" href="stations.html">Stations</a></li>
+                <li class="nav-item"><a class="nav-link active" href="travel-tips.html">Travel Tips</a></li>
+                <li class="nav-item"><a class="nav-link active" href="types-of-ticket.html">Types of Tickets</a></li>
+                <li class="nav-item"><a class="nav-link active" href="live-train-status.html">Live Train Status</a></li>
+                <li class="nav-item"><a class="nav-link active" href="emergency-guide.html">Emergency Guide</a></li>
+                <li class="nav-item"><a class="nav-link active" href="history.html">LRT Line 2 History</a></li>
+                <li class="nav-item"><a class="nav-link active" href="load-beep-card.html">How to Load Beep Card</a></li>
+                <li class="nav-item"><a class="nav-link active" href="passenger-tips.html">Passenger Tips and Reminders</a></li>
+                <li class="nav-item"><a class="nav-link active" href="related-articles.html">Related Articles and References/Sources</a></li>
+            </ul>
+            <!-- Search Bar -->
+            <form id="search-form" class="d-flex ms-auto">
+                <input type="text" id="search-input" class="form-control me-2" placeholder="Search..." aria-label="Search">
+                <button type="submit" class="btn btn-outline-light">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('search-form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form submission
+
+        const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+        const pageMapping = {
+            'home': 'index.html', 'main': 'index.html', 'index': 'index.html',
+            'train schedule': 'train-schedule.html', 'train': 'train-schedule.html', 'schedule': 'train-schedule.html',
+            'contact us': 'contact.html', 'contact': 'contact.html', 'faq': 'contact.html', 
+            'fares': 'fares.html', 'fare': 'fares.html',
+            'stations': 'stations.html', 'station': 'stations.html',
+            'travel tips': 'travel-tips.html', 'travel': 'travel-tips.html',
+            'types of tickets': 'types-of-ticket.html', 'ticket': 'types-of-ticket.html',
+            'live train status': 'live-train-status.html', 'train status': 'live-train-status.html',
+            'emergency guide': 'emergency-guide.html', 'emergency': 'emergency-guide.html', 'guide': 'emergency-guide.html',
+            'lrt line 2 history': 'history.html', 'history': 'history.html',
+            'load beep card': 'load-beep-card.html', 'load': 'load-beep-card.html', 'beep': 'load-beep-card.html',
+            'passenger tips': 'passenger-tips.html', 'passenger': 'passenger-tips.html', 'reminders': 'passenger-tips.html',
+            'related articles': 'related-articles.html', 'articles': 'related-articles.html', 'references': 'related-articles.html'
+        };
+
+        let foundPage = null;
+        Object.keys(pageMapping).forEach(key => {
+            if (searchQuery.includes(key)) {
+                foundPage = pageMapping[key];
+            }
+        });
+
+        if (foundPage) {
+            window.location.href = foundPage;
+        } else {
+            alert('Page not found. Please try a different search term.');
+        }
+    });
+</script>
+
+
+    <div class="container mt-5">
+    <h1 class="text-danger">🚨🚆 Live Train Status</h1>
+</div>
+
+    <div class="train-status" id="train-status">
+        <!-- Stations will be generated dynamically here -->
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Manila Train Fare LRT Line 2 Guide. All rights reserved.</p>
+        <p>Created by Shean Aquino, 9-Emerald</p>
+    </footer>
+
+    <script>
+        const stations = [
+            "Antipolo", "Marikina-Pasig", "Santolan", "Katipunan",
+            "Anonas", "Araneta Center-Cubao", "Betty Go-Belmonte",
+            "Gilmore", "J. Ruiz", "V. Mapa", "Pureza", "Legarda", "Recto"
+        ];
+
+        const trains = [
+            { id: 1, position: 0, direction: 1 },
+            { id: 2, position: 3, direction: 1 },
+            { id: 3, position: 6, direction: -1 },
+            { id: 4, position: 9, direction: -1 },
+            { id: 5, position: 12, direction: -1 }
+        ];
+
+        function updateTrainStatus() {
+            const statusContainer = document.getElementById("train-status");
+            statusContainer.innerHTML = "";
+
+            stations.forEach((station, index) => {
+                let stationDiv = document.createElement("div");
+                stationDiv.classList.add("station");
+                stationDiv.innerHTML = `<span>${station}</span>`;
+
+                trains.forEach(train => {
+                    if (train.position === index) {
+                        let trainDiv = document.createElement("div");
+                        trainDiv.classList.add("train");
+                        trainDiv.textContent = `🚆 Train ${train.id}`;
+                        stationDiv.appendChild(trainDiv);
+                    }
+                });
+
+                statusContainer.appendChild(stationDiv);
+            });
+        }
+
+        function moveTrains() {
+            trains.forEach(train => {
+                train.position += train.direction;
+
+                if (train.position >= stations.length) {
+                    train.position = stations.length - 2;
+                    train.direction = -1;
+                } else if (train.position < 0) {
+                    train.position = 1;
+                    train.direction = 1;
+                }
+            });
+
+            updateTrainStatus();
+        }
+
+        updateTrainStatus();
+        setInterval(moveTrains, 3000); // Update every 3 seconds
+
+    </script>
+</body>
+</html>

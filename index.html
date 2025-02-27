@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Standard favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+<link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
+
+<!-- High-resolution favicon for Retina & Mobile -->
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+
+<link rel="manifest" href="site.webmanifest">
+
+    <title>Home - Manila Train Fare LRT Line 2 Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Times New Roman;
+            padding-top: 60px;
+            background-color: #f8f9fa;
+        }
+        #logo{
+          width: 100%;
+          height: 50px; 
+      }
+        .hero-section {
+            background-color: #007bff;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+        .hero-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .feature-section, .optional-section {
+            padding: 20px 0;
+        }
+        .feature-card, .optional-card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            background-color: white;
+            height: 100%;
+        }
+        .map {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .map img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+        }
+        footer {
+            width: 100vw;
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 80px;
+            
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img id="logo" src="LRT Line 2 Logo.jpg" alt="LRT Line 2 Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="train-schedule.html">Train Schedule</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us and FAQ</a></li>
+                <li class="nav-item"><a class="nav-link active" href="fares.html">Fares</a></li>
+                <li class="nav-item"><a class="nav-link active" href="stations.html">Stations</a></li>
+                <li class="nav-item"><a class="nav-link active" href="travel-tips.html">Travel Tips</a></li>
+                <li class="nav-item"><a class="nav-link active" href="types-of-ticket.html">Types of Tickets</a></li>
+                <li class="nav-item"><a class="nav-link active" href="live-train-status.html">Live Train Status</a></li>
+                <li class="nav-item"><a class="nav-link active" href="emergency-guide.html">Emergency Guide</a></li>
+                <li class="nav-item"><a class="nav-link active" href="history.html">LRT Line 2 History</a></li>
+                <li class="nav-item"><a class="nav-link active" href="load-beep-card.html">How to Load Beep Card</a></li>
+                <li class="nav-item"><a class="nav-link active" href="passenger-tips.html">Passenger Tips and Reminders</a></li>
+                <li class="nav-item"><a class="nav-link active" href="related-articles.html">Related Articles and References/Sources</a></li>
+            </ul>
+            <!-- Search Bar -->
+            <form id="search-form" class="d-flex ms-auto">
+                <input type="text" id="search-input" class="form-control me-2" placeholder="Search..." aria-label="Search">
+                <button type="submit" class="btn btn-outline-light">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('search-form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form submission
+
+        const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+        const pageMapping = {
+            'home': 'index.html', 'main': 'index.html', 'index': 'index.html',
+            'train schedule': 'train-schedule.html', 'train': 'train-schedule.html', 'schedule': 'train-schedule.html',
+            'contact us': 'contact.html', 'contact': 'contact.html', 'faq': 'contact.html', 
+            'fares': 'fares.html', 'fare': 'fares.html',
+            'stations': 'stations.html', 'station': 'stations.html',
+            'travel tips': 'travel-tips.html', 'travel': 'travel-tips.html',
+            'types of tickets': 'types-of-ticket.html', 'ticket': 'types-of-ticket.html',
+            'live train status': 'live-train-status.html', 'train status': 'live-train-status.html',
+            'emergency guide': 'emergency-guide.html', 'emergency': 'emergency-guide.html', 'guide': 'emergency-guide.html',
+            'lrt line 2 history': 'history.html', 'history': 'history.html',
+            'load beep card': 'load-beep-card.html', 'load': 'load-beep-card.html', 'beep': 'load-beep-card.html',
+            'passenger tips': 'passenger-tips.html', 'passenger': 'passenger-tips.html', 'reminders': 'passenger-tips.html',
+            'related articles': 'related-articles.html', 'articles': 'related-articles.html', 'references': 'related-articles.html'
+        };
+
+        let foundPage = null;
+        Object.keys(pageMapping).forEach(key => {
+            if (searchQuery.includes(key)) {
+                foundPage = pageMapping[key];
+            }
+        });
+
+        if (foundPage) {
+            window.location.href = foundPage;
+        } else {
+            alert('Page not found. Please try a different search term.');
+        }
+    });
+</script>
+
+    <div class="container-fluid mt-5">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1>Welcome to the Manila Train Fare LRT Line 2 Guide</h1>
+            <p class="lead">Your guide to navigating LRT Line 2 with ease. Find schedules, fare details, and helpful tips all in one place.</p>
+            <a href="train-schedule.html" class="btn btn-light btn-lg mt-3">View Train Schedule</a>
+        </div>
+
+        <!-- Map -->
+        <div class="map">
+            <h1>LRT Line 2 Map</h1>
+            <img src="LRT Line 2 Map.jpg" alt="Map of LRT Line 2">
+        </div>
+
+          <!-- Fare Calculation Form -->
+        <div class="fare-form">
+            <h2>Calculate Your Fare</h2>
+            <form id="fare-calculator">
+                <div class="mb-3">
+                    <label for="leaving-from" class="form-label">Leaving From:</label>
+                    <select class="form-select" id="leaving-from" required>
+                        <option value="">Select Station</option>
+                        <option value="Antipolo">Antipolo</option>
+                        <option value="Marikina-Pasig">Marikina-Pasig</option>
+                        <option value="Santolan">Santolan</option>
+                        <option value="Katipunan">Katipunan</option>
+                        <option value="Anonas">Anonas</option>
+                        <option value="Araneta Center-Cubao">Araneta Center-Cubao</option>
+                        <option value="Betty Go-Belmonte">Betty Go-Belmonte</option>
+                        <option value="Gilmore">Gilmore</option>
+                        <option value="J. Ruiz">J. Ruiz</option>
+                        <option value="V. Mapa">V. Mapa</option>
+                        <option value="Pureza">Pureza</option>
+                        <option value="Recto">Recto</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="going-to" class="form-label">Going To:</label>
+                    <select class="form-select" id="going-to" required>
+                        <option value="">Select Station</option>
+                        <option value="Antipolo">Antipolo</option>
+                        <option value="Marikina-Pasig">Marikina-Pasig</option>
+                        <option value="Santolan">Santolan</option>
+                        <option value="Katipunan">Katipunan</option>
+                        <option value="Anonas">Anonas</option>
+                        <option value="Araneta Center-Cubao">Araneta Center-Cubao</option>
+                        <option value="Betty Go-Belmonte">Betty Go-Belmonte</option>
+                        <option value="Gilmore">Gilmore</option>
+                        <option value="J. Ruiz">J. Ruiz</option>
+                        <option value="V. Mapa">V. Mapa</option>
+                        <option value="Pureza">Pureza</option>
+                        <option value="Recto">Recto</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="passenger-type" class="form-label">Passenger Type:</label>
+                    <select class="form-select" id="passenger-type" required>
+                        <option value="regular">Regular</option>
+                        <option value="student">Student (20% OFF)</option>
+                        <option value="senior">Senior (20% OFF)</option>
+                        <option value="pwd">PWD (20% OFF)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Calculate Fare</button>
+            </form>
+            <div id="fare-result" class="mt-3"></div>
+        </div>
+    </div>
+
+        <!-- Features Section -->
+        <div class="feature-section">
+            <div class="row">
+                 <div class="col-lg-4 mb-4">
+            <div class="feature-card">
+                <h3>Train Schedule</h3>
+                <p>Find out the latest train schedules for weekdays, weekends, and holidays.</p>
+                <a href="train-schedule.html" class="btn btn-primary">View Train Schedule</a>
+            </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+            <div class="feature-card">
+                <h3>Contact Us and FAQs</h3>
+                <p>Have questions or need assistance? Get in touch with our customer support team.</p>
+                <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+            </div>
+        </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <h3>Fare Information</h3>
+                        <p>Learn about fare rates and discounts of 20% off available for students, seniors, and persons with disabilities.</p>
+                        <a href="fares.html" class="btn btn-primary">View Fare Details</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <h3>Station Guide</h3>
+                        <p>Get to know all 13 stations on LRT Line 2 from Antipolo to Recto, including major landmarks near each station.</p>
+                        <a href="stations.html" class="btn btn-warning">View Station Guide</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <h3>Travel Tips</h3>
+                        <p>Discover helpful tips to make your LRT journey safer, faster, and more comfortable.</p>
+                    <a href="travel-tips.html" class="btn btn-warning">Read Tips</a>
+                    </div>
+                </div>
+
+        <div class="col-lg-4 mb-4">
+    <div class="feature-card">
+        <h3>Types of Tickets</h3>
+        <p>Learn about the different types of tickets available, including Single Journey, Stored Value, and Beep Cards.</p>
+        <a href="types-of-ticket.html" class="btn btn-warning">View Ticket Types</a>
+    </div>
+</div>
+
+        <div class="col-lg-4 mb-4">
+    <div class="feature-card">
+        <h3>Live Train Status</h3>
+        <p>Track real-time train locations and estimated arrival times for each station.</p>
+    <a href="live-train-status.html" class="btn btn-danger">Check Live Status</a>
+    </div>
+</div>
+    
+    
+            <div class="col-md-4 mb-4">
+                <div class="feature-card text-center">
+                    <h4>Emergency Guide</h4>
+                    <p>Find safety protocols, emergency contacts, and steps to follow during an emergency.</p>
+                    <a href="emergency-guide.html" class="btn btn-danger">View Guide</a>
+                </div>
+            </div>
+
+            
+            <div class="col-md-4 mb-4">
+                <div class="feature-card text-center">
+                    <h4>LRT Line 2 History</h4>
+                    <p>Explore the history and milestones of LRT Line 2 from its inception to today.</p>
+                    <a href="history.html" class="btn btn-danger">Read More</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+        <!-- Optional Content Section -->
+        <div class="optional-section">
+            <h2 class="mb-4">Additional Information</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="optional-card">
+                        <h4>How to Load Beep Card</h4>
+                        <p>Learn how to load your Beep Card at ticket vending machines or partner stores for a hassle-free ride.</p>
+                        <a href="load-beep-card.html" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="optional-card">
+                        <h4>Passenger Tips and Reminders</h4>
+                        <p>Get tips on how to stay safe and comfortable during your trip, including peak hour travel advice.</p>
+                        <a href="passenger-tips.html" class="btn btn-secondary">Read Tips</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="optional-card">
+                        <h4>Related Articles</h4>
+                        <p>Explore related articles on metro transportation, city guides, and travel updates for Manila.</p>
+                        <a href="related-articles.html" class="btn btn-secondary">View Articles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <footer>
+        <p>&copy; 2025 Manila Train Fare LRT Line 2 Guide. All rights reserved.</p>
+        <p>Created by Shean Aquino, 9-Emerald</p>
+    </footer>
+
+<script>
+        document.getElementById('fare-calculator').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const baseFare = 15; // Example base fare
+            const distanceFare = 2; // Example fare per station traveled
+            const discounts = { student: 0.20, senior: 0.20, pwd: 0.20 };
+            
+            const leavingFrom = document.getElementById('leaving-from').selectedIndex;
+            const goingTo = document.getElementById('going-to').selectedIndex;
+            const passengerType = document.getElementById('passenger-type').value;
+
+            if (leavingFrom === goingTo) {
+                document.getElementById('fare-result').innerHTML = '<p class="text-danger">Please select different stations.</p>';
+                return;
+            }
+
+            const stationCount = Math.abs(leavingFrom - goingTo);
+            let fare = baseFare + (distanceFare * stationCount);
+
+            if (passengerType in discounts) {
+                fare *= (1 - discounts[passengerType]);
+            }
+
+            document.getElementById('fare-result').innerHTML = `<p>Estimated Fare: <strong>₱${fare.toFixed(2)}</strong></p>`;
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

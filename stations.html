@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Standard favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+<link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
+
+<!-- High-resolution favicon for Retina & Mobile -->
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+
+<link rel="manifest" href="site.webmanifest">
+
+    <title>🚆LRT Line 2 Stations - Manila Train Fare LRT Line 2 Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 80px;
+            background-color: #f8f9fa;
+            font-family: Trebuchet MS;
+        }
+        #logo {
+          width: 100%;
+          height: 50px;
+      }
+      .map {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .map img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #dee2e6;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .station-card {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .station-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img id="logo" src="LRT Line 2 Logo.jpg" alt="LRT Line 2 Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="train-schedule.html">Train Schedule</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us and FAQ</a></li>
+                <li class="nav-item"><a class="nav-link active" href="fares.html">Fares</a></li>
+                <li class="nav-item"><a class="nav-link active" href="stations.html">Stations</a></li>
+                <li class="nav-item"><a class="nav-link active" href="travel-tips.html">Travel Tips</a></li>
+                <li class="nav-item"><a class="nav-link active" href="types-of-ticket.html">Types of Tickets</a></li>
+                <li class="nav-item"><a class="nav-link active" href="live-train-status.html">Live Train Status</a></li>
+                <li class="nav-item"><a class="nav-link active" href="emergency-guide.html">Emergency Guide</a></li>
+                <li class="nav-item"><a class="nav-link active" href="history.html">LRT Line 2 History</a></li>
+                <li class="nav-item"><a class="nav-link active" href="load-beep-card.html">How to Load Beep Card</a></li>
+                <li class="nav-item"><a class="nav-link active" href="passenger-tips.html">Passenger Tips and Reminders</a></li>
+                <li class="nav-item"><a class="nav-link active" href="related-articles.html">Related Articles and References/Sources</a></li>
+            </ul>
+            <!-- Search Bar -->
+            <form id="search-form" class="d-flex ms-auto">
+                <input type="text" id="search-input" class="form-control me-2" placeholder="Search..." aria-label="Search">
+                <button type="submit" class="btn btn-outline-light">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<script>
+    document.getElementById('search-form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form submission
+
+        const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+        const pageMapping = {
+            'home': 'index.html', 'main': 'index.html', 'index': 'index.html',
+            'train schedule': 'train-schedule.html', 'train': 'train-schedule.html', 'schedule': 'train-schedule.html',
+            'contact us': 'contact.html', 'contact': 'contact.html', 'faq': 'contact.html', 
+            'fares': 'fares.html', 'fare': 'fares.html',
+            'stations': 'stations.html', 'station': 'stations.html',
+            'travel tips': 'travel-tips.html', 'travel': 'travel-tips.html',
+            'types of tickets': 'types-of-ticket.html', 'ticket': 'types-of-ticket.html',
+            'live train status': 'live-train-status.html', 'train status': 'live-train-status.html',
+            'emergency guide': 'emergency-guide.html', 'emergency': 'emergency-guide.html', 'guide': 'emergency-guide.html',
+            'lrt line 2 history': 'history.html', 'history': 'history.html',
+            'load beep card': 'load-beep-card.html', 'load': 'load-beep-card.html', 'beep': 'load-beep-card.html',
+            'passenger tips': 'passenger-tips.html', 'passenger': 'passenger-tips.html', 'reminders': 'passenger-tips.html',
+            'related articles': 'related-articles.html', 'articles': 'related-articles.html', 'references': 'related-articles.html'
+        };
+
+        let foundPage = null;
+        Object.keys(pageMapping).forEach(key => {
+            if (searchQuery.includes(key)) {
+                foundPage = pageMapping[key];
+            }
+        });
+
+        if (foundPage) {
+            window.location.href = foundPage;
+        } else {
+            alert('Page not found. Please try a different search term.');
+        }
+    });
+</script>
+
+    <!-- Map Placeholder -->
+        <div class="map container mt-5">
+            <h1 class="text-center text-success my-4">🚆LRT Line 2 Stations Map</h1>
+<img src="LRT Line 2 Map.jpg" alt="Blue Line and New Version Map of LRT Line 2">
+        </div>
+
+    <div class="container">
+        <h1 class="text-center text-success my-4">LRT Line 2 Stations</h1>
+        <p>The LRT Line 2 (Blue Line) operates from Antipolo to Recto with 12 stations. Do note that the one with the Purple Line is now outdated. Below is a list of the stations and brief information about each:</p>
+
+        <div class="station-card">
+            <img src="Antipolo Station.jpg" alt="Antipolo Station">
+            <div>
+                <h2>1. Antipolo Station</h2>
+                <p>The easternmost station of LRT Line 2, located in Antipolo City. It serves as a major hub for commuters from Rizal Province.</p>
+            </div>
+        </div>
+        <div class="station-card">
+            <img src="Marikina-Pasig Station.jpg" alt="Marikina-Pasig Station">
+            <div>
+                <h2>2. Marikina-Pasig Station</h2>
+                <p>Located between Marikina and Pasig, this station provides access to key residential and commercial areas in both cities.</p>
+            </div>
+        </div>
+        <div class="station-card">
+            <img src="Santolan Station.jpg" alt="Santolan Station">
+            <div>
+                <h2>3. Santolan Station</h2>
+                <p>A busy station near Santolan Road, known for its proximity to several schools and shopping centers.</p>
+            </div>
+        </div>
+        <!-- Repeat the same structure for the remaining stations -->
+        <div class="station-card">
+            <img src="Katipunan Station.jpg" alt="Katipunan Station">
+            <div>
+                <h2>4. Katipunan Station</h2>
+                <p>This station serves the Katipunan Avenue area, with easy access to educational institutions like Ateneo de Manila University and Miriam College.</p>
+            </div>
+        </div>
+        <div class="station-card">
+            <img src="Anonas Station.jpg" alt="Anonas Station">
+            <div>
+                <h2>5. Anonas Station</h2>
+                <p>Located in Quezon City, the Anonas Station serves residential and commercial districts along Anonas Street.</p>
+            </div>
+        </div>
+        <div class="station-card">
+            <img src="Araneta Center-Cubao Station.jpg" alt="Araneta Center-Cubao Station">
+            <div>
+                <h2>6. Araneta Center-Cubao Station</h2>
+                <p>A major transfer point for passengers connecting to LRT Line 1 and the MRT-3. It’s also adjacent to the Araneta City complex.</p>
+            </div>
+        </div>
+        <div class="station-card">
+            <img src="Betty Go-Belmonte Station.jpg" alt="Betty Go-Belmonte Station">
+            <div>
+            <h2>7. Betty Go-Belmonte Station</h2>
+            <p>This station is located near New Manila in Quezon City, named after Betty Go-Belmonte, a notable journalist and publisher.</p>
+        </div>
+    </div>
+        <div class="station-card">
+            <img src="Gilmore Station.jpg" alt="Gilmore Station">
+            <div>
+            <h2>8. Gilmore Station</h2>
+            <p>A station popular for its proximity to IT shops and electronics stores along Gilmore Avenue.</p>
+        </div>
+    </div>
+        <div class="station-card">
+            <img src="J. Ruiz Station.jpg" alt="J. Ruiz Station">
+            <div>
+            <h2>9. J. Ruiz Station</h2>
+            <p>Named after J. Ruiz Street, this station serves nearby residential areas and schools in San Juan City.</p>
+        </div>
+    </div>
+        <div class="station-card">
+            <img src="V. Mapa Station.jpg" alt="V. Mapa Station">
+            <div>
+            <h2>10. V. Mapa Station</h2>
+            <p>Located near V. Mapa High School, this station is a convenient stop for students and residents in the area.</p>
+        </div>
+    </div>
+        <div class="station-card">
+            <img src="Pureza Station.jpg" alt="Pureza Station">
+            <div>
+            <h2>11. Pureza Station</h2>
+            <p>A station known for its accessibility to nearby universities and colleges in Manila.</p>
+        </div>
+    </div>
+        <div class="station-card">
+            <img src="Legarda Station.jpg" alt="Legarda Station">
+            <div>
+            <h2>12. Legarda Station</h2>
+            <p>Situated near several universities and landmarks like the University of the East and the San Sebastian Basilica.</p>
+        </div>
+    </div>
+        <div class="station-card">
+            <img src="Recto Station.jpg" alt="Recto Station">
+            <div>
+            <h2>13. Recto Station</h2>
+            <p>The westernmost station of LRT Line 2, located in Manila’s bustling commercial district. It connects to LRT Line 1 via the Doroteo Jose Station.</p>
+        </div>
+    </div>
+</div>
+
+    <footer>
+        <p>&copy; 2025 Manila Train Fare LRT Line 2 Guide. All rights reserved.</p>
+        <p>Created by Shean Aquino, 9-Emerald</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
